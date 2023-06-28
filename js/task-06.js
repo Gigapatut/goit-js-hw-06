@@ -9,5 +9,8 @@ textInput.addEventListener("blur", (input) => {
         textInput.classList.add("valid");
         textInput.classList.remove("invalid");
 
-    } else {textInput.classList.add("invalid");}   
+    } else if (input.currentTarget.value.trim().length === 0){
+        textInput.classList.remove("invalid");
+        textInput.classList.remove("valid");
+    }else{textInput.classList.add("invalid")}   
 });
